@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package structure;
+
+message Structure {
+    map<string, int32> dictionary = 1;
+    repeated float array = 2;
+}

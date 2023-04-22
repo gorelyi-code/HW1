@@ -1,0 +1,79 @@
+version: "3.9"
+
+services:
+  proxy:
+    container_name: proxy
+    build:
+      dockerfile: proxy/Dockerfile
+    ports:
+      - "2000:2000/udp"
+    networks:
+      - soa
+    environment:
+      - MULTICAST_GROUP
+
+  pickle:
+    container_name: pickle
+    build:
+      dockerfile: scripts/pickle/Dockerfile
+    networks:
+      - soa
+    environment:
+      - MULTICAST_GROUP
+
+  xml:
+    container_name: xml
+    build:
+      dockerfile: scripts/xml/Dockerfile
+    networks:
+      - soa
+    environment:
+      - MULTICAST_GROUP
+
+  json:
+    container_name: json
+    build:
+      dockerfile: scripts/json/Dockerfile
+    networks:
+      - soa
+    environment:
+      - MULTICAST_GROUP
+
+  protobuf:
+    container_name: protobuf
+    build:
+      dockerfile: scripts/protobuf/Dockerfile
+    networks:
+      - soa
+    environment:
+      - MULTICAST_GROUP
+
+  avro:
+    container_name: avro
+    build:
+      dockerfile: scripts/avro/Dockerfile
+    networks:
+      - soa
+    environment:
+      - MULTICAST_GROUP
+
+  yaml:
+    container_name: yaml
+    build:
+      dockerfile: scripts/yaml/Dockerfile
+    networks:
+      - soa
+    environment:
+      - MULTICAST_GROUP
+
+  message_pack:
+    container_name: message_pack
+    build:
+      dockerfile: scripts/message_pack/Dockerfile
+    networks:
+      - soa
+    environment:
+      - MULTICAST_GROUP
+
+networks:
+  soa:
