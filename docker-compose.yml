@@ -3,8 +3,6 @@ version: "3.9"
 services:
   proxy:
     container_name: proxy
-    build:
-      dockerfile: proxy/Dockerfile
     image: mikki028/proxy
     ports:
       - "2000:2000/udp"
@@ -15,8 +13,6 @@ services:
 
   pickle:
     container_name: pickle
-    build:
-      dockerfile: scripts/pickle/Dockerfile
     image: mikki028/pickle
     networks:
       - soa
@@ -25,8 +21,6 @@ services:
 
   xml:
     container_name: xml
-    build:
-      dockerfile: scripts/xml/Dockerfile
     image: mikki028/xml
     networks:
       - soa
@@ -35,8 +29,6 @@ services:
 
   json:
     container_name: json
-    build:
-      dockerfile: scripts/json/Dockerfile
     image: mikki028/json
     networks:
       - soa
@@ -45,8 +37,6 @@ services:
 
   protobuf:
     container_name: protobuf
-    build:
-      dockerfile: scripts/protobuf/Dockerfile
     image: mikki028/protobuf
     networks:
       - soa
@@ -55,8 +45,6 @@ services:
 
   avro:
     container_name: avro
-    build:
-      dockerfile: scripts/avro/Dockerfile
     image: mikki028/avro
     networks:
       - soa
@@ -65,8 +53,6 @@ services:
 
   yaml:
     container_name: yaml
-    build:
-      dockerfile: scripts/yaml/Dockerfile
     image: mikki028/yaml
     networks:
       - soa
@@ -75,8 +61,6 @@ services:
 
   message_pack:
     container_name: message_pack
-    build:
-      dockerfile: scripts/message_pack/Dockerfile
     image: mikki028/message_pack
     networks:
       - soa
